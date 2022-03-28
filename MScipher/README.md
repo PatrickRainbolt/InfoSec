@@ -6,6 +6,8 @@ This may not improve the standard shift cipher but does make it more difficult t
 
 
 # List of things to address in Version 2:
+```
+
 + Command line Parser and data checker
 ----+ 
 
@@ -16,3 +18,5 @@ This may not improve the standard shift cipher but does make it more difficult t
        +  Written Set: '.~,!@_?"\;:&`
        +     Math Set: +-*/<=>%$#^()|[]
 ----+ Command Line Arguments should be able to manipulate these flags.
+
+```
