@@ -13,9 +13,9 @@ So where the Plane number ‘1234’ would become ‘6789’ from the shifted ta
 
 
 # MSencode: 
-'''
+```
 Example: MSencode.py 5 'PASSWORD' 'This is a test'
-'''
+```
 
 # Here are the rules to Msencode:
     • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789”.
