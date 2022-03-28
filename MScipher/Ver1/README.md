@@ -1,5 +1,5 @@
-# MSencode: 
-MSencode is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
+# MScipher: 
+MScipher is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
 
 # So what is a shift cipher? 
 It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the left ‘5’ positions:
@@ -9,6 +9,10 @@ Shifted:    5678901234
 ```
 
 So where the Plane number ‘1234’ would become ‘6789’ from the shifted table. Then to decode the message you just use the Shifted position to get the Plane number. 
+
+
+
+# MSencode: 
 
 # Here are the rules to Msencode:
     • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789”.
