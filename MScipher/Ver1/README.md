@@ -17,7 +17,7 @@ So where the Plane number ‘1234’ would become ‘6789’ from the shifted ta
 Example: MSencode.py 5 'PASSWORD' 'This is a test'
 ```
 
-# Here are the rules to Msencode:
+# Here are the rules to MSencode:
     • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789”.
     • Have a established first left shift value. An example is ‘5’.
     • Have a established Rotation key or Password. One rule is that the key must be made up from the established alphabet key. An example is ‘PASSWORD’.
@@ -61,4 +61,15 @@ Encrypt: 7R4RF6SYI2860A
 
 ```
 
+
+#
+# MSdecode: 
+```
+Example: MSdecode.py 5 'PASSWORD' '7R4RF6SYI2860A'
+```
+# Here are the rules to MSdecode:
+    • They are exactly the same as MSencode
+
+# How does it work:
+    1. It also works like MSencode except the character position and character lookup list are switched.
 
