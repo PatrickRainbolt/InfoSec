@@ -2,7 +2,7 @@
 MSencode is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
 
 # So what is a shift cipher? 
-It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the right ‘5’ positions:
+It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the left ‘5’ positions:
 ```
 Plane:	    0123456789
 Shifted:    5678901234
@@ -12,15 +12,15 @@ So where the Plane number ‘1234’ would become ‘6789’ from the shifted ta
 
 # Here are the rules to Msencode:
     • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789”.
-    • Have a established first right shift value. An example is ‘5’.
+    • Have a established first left shift value. An example is ‘5’.
     • Have a established Rotation key or Password. One rule is that the key must be made up from the established alphabet key. An example is ‘PASSWORD’.
 
 # How does it work:
-    1. First we create the original right shifted alphabet key from the shift value you included. Using the example above we end up with this right shifted alphabet key, “FGHIJKLMNOPQRSTUVWXYZ 0123456789ABCDE”.
-    2. Creates an array of positions, each character of the given Rotation key or Password, using the right shifted alphabet key. An example of this array would be, ‘10, 32, 13, 13, 17, 9, 12, 35’. So the ‘P’ from the example ‘PASSWORD’ is now in position ‘10’. I decided to create these using the right shifted alphabet key to make brute-forcing much harder. 
+    1. First we create the original left shifted alphabet key from the shift value you included. Using the example above we end up with this left shifted alphabet key, “FGHIJKLMNOPQRSTUVWXYZ 0123456789ABCDE”.
+    2. Creates an array of positions, each character of the given Rotation key or Password, using the left shifted alphabet key. An example of this array would be, ‘10, 32, 13, 13, 17, 9, 12, 35’. So the ‘P’ from the example ‘PASSWORD’ is now in position ‘10’. I decided to create these using the left shifted alphabet key to make brute-forcing much harder. 
     3. Time to encode the message:
         ◦ Take the current shift value and add the first Rotation key together. If that value is larger the the length of the established alphabet key then subtract the length of the established alphabet key. Here is a example: Shift is at ‘5’, the first Rotation key is ‘10’, therefor ‘5 + 10’ equals ‘15’. ‘15’ is not larger than the length of the established alphabet key, which is ‘36’. Note: once you get to the last Rotation key just reset to position ‘1’ and keep rotating. 
-        ◦ Take this new shift value and create a new right shifted alphabet key from the established alphabet key. Using the new shift value of ‘15’ we end up with a new key, ‘PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO’.
+        ◦ Take this new shift value and create a new left shifted alphabet key from the established alphabet key. Using the new shift value of ‘15’ we end up with a new key, ‘PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO’.
         ◦ Look up the position of first character of the text to encode in the established alphabet key. An example would be, ‘T’ is position ‘19’. Position ‘19’ is the new key is ‘7’.
         ◦ Continue this process through all of the characters in the text to encode.
 
