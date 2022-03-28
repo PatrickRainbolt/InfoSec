@@ -1,7 +1,5 @@
-# MScipher: 
-MScipher is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
-
-This was a proof of concept so encrypt and decrypt are two seperate scripts.
+# MScipher:  03-28-2022 
+MScipher is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher. This is a proof of concept so encrypt and decrypt are two seperate scripts.
 
 # So what is a shift cipher? 
 It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the left ‘5’ positions:
