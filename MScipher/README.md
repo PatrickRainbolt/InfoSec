@@ -5,7 +5,7 @@ This may not improve the standard shift cipher but does make it more difficult t
 
 
 
-# List of things to address in Version 2:
+# List of things to address:
 ```
 
 + Command line Parser and data checker
