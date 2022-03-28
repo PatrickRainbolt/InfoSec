@@ -10,8 +10,8 @@ Shifted:    5678901234
 
 So where the Plane number ‘1234’ would become ‘6789’ from the shifted table. Then to decode the message you just use the Shifted position to get the Plane number. 
 
-
-
+#
+#
 # MSencode: 
 ```
 Example: MSencode.py 5 'PASSWORD' 'This is a test'
