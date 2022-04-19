@@ -57,7 +57,7 @@ pipe in and out data. Here is an Example:
 ```
 
 
-# Here is a example of the encryption process
+# Here is an example of the encryption process
 ```
 > MScipher-V2.py --shift 5 --justify "Mid" --password "THIS IS A TEST" --debug
 
