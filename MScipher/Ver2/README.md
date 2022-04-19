@@ -112,9 +112,8 @@ Please Enter a Password:PASSWORD
 THIS IS A TEST 
 
 
-[/home/ceasar]: cat file.txt 
-THIS IS A TEST
-[/home/ceasar]: cat file.txt | ./MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
+
+[/home/ceasar]: echo "THIS IS A TEST" | ./MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
 [/home/ceasar]: cat encode.txt 
 BYW2 L8 M 6F66
 
