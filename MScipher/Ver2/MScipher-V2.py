@@ -47,6 +47,30 @@ DeCipher = False
 # Setting this to True converts all character to uppercase before processing.
 Convert = False
 
+# Syntax Information
+def SyntaxInformation():
+     print("""SYNTAX: MScipher <args> <passcode> <text>
+
+     {-s} or {--shift}     Sets MScipher shift value.
+     {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
+     {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
+                              Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
+                              explainitary. Mid looks at the Rotate bit and shift Left
+                              if less than or equal to the mid point of the Key List size.
+     {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation 
+                              value on a valid charater in the List.
+     {-p} or {--password}  Ask for the Rotate Key or Password after running.
+     {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
+
+     {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
+     {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
+     {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
+     {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
+
+     {--debug}      Turns on verbose mode.
+     """)
+     sys.exit()
+
 
 # Command Line Parser
 def CmdLineParser():
@@ -64,28 +88,7 @@ def CmdLineParser():
      inData = ''
 
      if len(sys.argv) < 2:
-         print("""SYNTAX: MScipher <args> <passcode> <text>
-
-         {-s} or {--shift}     Sets MScipher shift value.
-	 {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
-         {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
-                                  Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
-                                  explainitary. Mid looks at the Rotate bit and shift Left
-                                  if less than or equal to the mid point of the Key List size.
-         {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation 
-                                  value on a valid charater in the List.
-         {-p} or {--password}  Ask for the Rotate Key or Password after running.
-         {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
-
-         {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
-         {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
-         {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
-         {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
-
-         {--debug}      Turns on verbose mode.
-          """)
-         sys.exit()
-
+         SyntaxInformation()
      ARG = sys.argv
      DebugOut = "\nMScipher Debug-Mode Active:\n# ARGS[" + str(len(ARG)).rjust(2, ' ') + "]  ARG"+str(ARG[1:])+"\n\n"
 
@@ -135,6 +138,7 @@ def CmdLineParser():
          del ARG[1]
          DebugOut += "\n"
 
+     if inData == "": SyntaxInformation()
      if Debug: print(DebugOut)
      if PassSet: Password = input('Please Enter a Password:')
      if Debug:
