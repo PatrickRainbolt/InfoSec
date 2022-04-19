@@ -1,5 +1,5 @@
 # MSencode: 
-MSencode is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
+MScipher is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
 
 # So what is a shift cipher? 
 It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the right ‘5’ positions:
@@ -26,32 +26,72 @@ So where the Plane number ‘1234’ would become ‘6789’ from the shifted ta
 
 If you are using the above examples with plane text of ‘This is a test’, it will encrypted to ‘8R5SQ8U9KEB94E’.
 
+# Program Syntax:
+```
+SYNTAX: MScipher <args> <passcode> <text>
+
+	 {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
+     {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
+                              Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
+                              explainitary. Mid looks at the Rotate bit and shift Left
+                              if less than or equal to the mid point of the Key List size.
+     {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation 
+                              value on a valid charater in the List.
+     {-p} or {--password}  Ask for the Rotate Key or Password after running.
+     {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
+
+     {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
+     {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
+     {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
+     {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
+
+     {--debug}      Turns on verbose mode.
+```
 
 # Here is a example of the encryption process
 ```
-]-[ ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789  --LEN[36]
-]-[ FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE  --SHIFT[5]
- 
-]-[ Rotators[10, 31, 13, 13, 17, 9, 12, 34]
- 
-[T] PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO SFT[15] POS[19] = [8]
-[h] KLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJ SFT[10] POS[ 7] = [R]
-[i] XYZ0123456789ABCDEFGHIJKLMNOPQRSTUVW SFT[23] POS[ 8] = [5]
-[s] ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 SFT[36] POS[18] = [S]
-[ ] RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQ SFT[17] POS[-1] = [Q]
-[i] 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ SFT[26] POS[ 8] = [8]
-[s] CDEFGHIJKLMNOPQRSTUVWXYZ0123456789AB SFT[ 2] POS[18] = [U]
-[ ] ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 SFT[36] POS[-1] = [9]
-[a] KLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJ SFT[10] POS[ 0] = [K]
-[ ] FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE SFT[ 5] POS[-1] = [E]
-[t] STUVWXYZ0123456789ABCDEFGHIJKLMNOPQR SFT[18] POS[19] = [B]
-[e] 56789ABCDEFGHIJKLMNOPQRSTUVWXYZ01234 SFT[31] POS[ 4] = [9]
-[s] MNOPQRSTUVWXYZ0123456789ABCDEFGHIJKL SFT[12] POS[18] = [4]
-[t] VWXYZ0123456789ABCDEFGHIJKLMNOPQRSTU SFT[21] POS[19] = [E]
- 
-Decrypt: This is a test
-Encrypt: 8R5SQ8U9KEB94E
+> MScipher-V2.py -s 5 -j "Mid" "PASSWORD" "THIS IS A TEST" --debug
 
+MScipher Debug-Mode Active:
+# ARGS[ 8]  ARG['-s', '5', '-j', 'Mid', 'PASSWORD', 'THIS IS A TEST', '--debug']
+
+- ARGS[ 8]  ARG[-s] + [5]
+- ARGS[ 6]  ARG[-j] + [Mid]
+- ARGS[ 4]  ARG[PASSWORD]
+- ARGS[ 3]  ARG[THIS IS A TEST]
+- ARGS[ 2]  ARG[--debug]
+
+- LEN[36] LST[ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]
+- LEN[ 6] PAS[SECRET]
+- LEN[..] SHF[5]
+
+
+- LEN[36] LST[FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE]
+# CHAR[S] POS[13]
+# CHAR[E] POS[35]
+# CHAR[C] POS[33]
+# CHAR[R] POS[12]
+# CHAR[E] POS[35]
+# CHAR[T] POS[14]
+- LEN[ 6] ROT[13, 35, 33, 12, 35, 14]
+
+- R[T] pSHF[ 5] ROT[13] STUVWXYZ0123456789ABCDEFGHIJKLMNOPQR SFT[18] POS[19] = [B]
+- L[H] pSHF[18] ROT[35] RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQ SFT[17] POS[ 7] = [Y]
+- L[I] pSHF[17] ROT[33] OPQRSTUVWXYZ0123456789ABCDEFGHIJKLMN SFT[14] POS[ 8] = [W]
+- R[S] pSHF[14] ROT[12] KLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJ SFT[26] POS[18] = [2]
+- R[ ] pSHF[26] ROT[35] LMNOPQRSTUVWXYZ0123456789ABCDEFGHIJK SFT[25] POS[-1] = [ ]
+- L[I] pSHF[25] ROT[14] DEFGHIJKLMNOPQRSTUVWXYZ0123456789ABC SFT[ 3] POS[ 8] = [L]
+- L[S] pSHF[ 3] ROT[13] QRSTUVWXYZ0123456789ABCDEFGHIJKLMNOP SFT[16] POS[18] = [8]
+- L[ ] pSHF[16] ROT[35] PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO SFT[15] POS[-1] = [ ]
+- L[A] pSHF[15] ROT[33] MNOPQRSTUVWXYZ0123456789ABCDEFGHIJKL SFT[12] POS[ 0] = [M]
+- R[ ] pSHF[12] ROT[12] MNOPQRSTUVWXYZ0123456789ABCDEFGHIJKL SFT[24] POS[-1] = [ ]
+- R[T] pSHF[24] ROT[35] NOPQRSTUVWXYZ0123456789ABCDEFGHIJKLM SFT[23] POS[19] = [6]
+- L[E] pSHF[23] ROT[14] BCDEFGHIJKLMNOPQRSTUVWXYZ0123456789A SFT[ 1] POS[ 4] = [F]
+- L[S] pSHF[ 1] ROT[13] OPQRSTUVWXYZ0123456789ABCDEFGHIJKLMN SFT[14] POS[18] = [6]
+- L[T] pSHF[14] ROT[35] NOPQRSTUVWXYZ0123456789ABCDEFGHIJKLM SFT[13] POS[19] = [6]
+ 
+- PlainText: THIS IS A TEST
+- Encrypted: BYW2 L8 M 6F66
 
 ```
 
