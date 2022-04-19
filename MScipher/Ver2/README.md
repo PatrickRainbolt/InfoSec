@@ -53,13 +53,13 @@ SYNTAX: MScipher <args> <passcode> <text>
 MScipher reads STDIN, if there is no input text on the command line and pipes out to STDOUT. These allow you to 
 pipe in and out data. Here is an Example:
 ```
-> cat file.txt | MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
+[/home/ceasar]: cat file.txt | MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
 ```
 
 
 # Here is an example of the encryption process
 ```
-> MScipher-V2.py --shift 5 --justify "Mid" --password "THIS IS A TEST" --debug
+[/home/ceasar]: MScipher-V2.py --shift 5 --justify "Mid" --password "THIS IS A TEST" --debug
 
 MScipher Debug-Mode Active:
 # ARGS[ 8]  ARG['--shift', '5', '--justify', 'Mid', '--password', 'THIS IS A TEST', '--debug']
@@ -106,16 +106,16 @@ Please Enter a Password:PASSWORD
 - Encrypted: 8RVS SU K BJ48
 
 
-> MScipher-V2.py --shift 5 --justify "Mid" --password "8RVS SU K BJ48" --decipher 
+[/home/ceasar]: MScipher-V2.py --shift 5 --justify "Mid" --password "8RVS SU K BJ48" --decipher 
 Please Enter a Password:PASSWORD
 
 THIS IS A TEST 
 
 
-> cat file.txt 
+[/home/ceasar]: cat file.txt 
 THIS IS A TEST
-> cat file.txt | ./MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
-> cat encode.txt 
+[/home/ceasar]: cat file.txt | ./MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
+[/home/ceasar]: cat encode.txt 
 BYW2 L8 M 6F66
 
 ```
