@@ -138,7 +138,13 @@ def CmdLineParser():
          del ARG[1]
          DebugOut += "\n"
 
-     if inData == "": SyntaxInformation()
+     if inData == "":
+         # No Text was found in the Arguments, checking STDIN for Text,
+         if not sys.stdin.isatty():
+             inData = sys.stdin.read()[:-1]
+         if inData == "": 
+             SyntaxInformation()
+
      if Debug: print(DebugOut)
      if PassSet: Password = input('Please Enter a Password:')
      if Debug:
@@ -150,7 +156,8 @@ def CmdLineParser():
 #   length to get Shift Value.
 def CreateShift(inShift, inList, inDebug):
      if inShift >= len(inList):
-         if inDebug: print("- LEN[->] pSHF["+str(inShift)+"] MOD["+str(inShift) + "-INT("+str(inShift) + "/" + str(len(inList)) + ")] SHF[" + str(inShift % len(inList)) + "]")
+         if inDebug: print("- LEN[->] pSHF["+str(inShift)+"] MOD["+str(inShift) + "-INT("+str(inShift) + "/" + 
+             str(len(inList)) + ")] SHF[" + str(inShift % len(inList)) + "]")
          inShift = inShift % len(inList)
      else:
          if inDebug: print("- LEN[..] SHF["+str(inShift)+"]\n")
@@ -205,7 +212,8 @@ def Encrypt(inShift, inJustify, inRotate, inWordList, inText, inConvert, inLeap,
              # Grabs character from new list using found position.
              if PosChar != -1: EncodedChar = ShiftLst[PosChar]
              else: EncodedChar = inChar
-             if inDebug: print("[" + inChar + "] pSHF["+str(preShift).rjust(2, ' ')+"] ROT["+str(inRotate[lpRotate]).rjust(2, ' ')+"] " + ShiftLst + " SFT["+ str(inShift).rjust(2, ' ') + "] POS["+ str(PosChar).rjust(2, ' ') + "] = [" + EncodedChar + "]")
+             if inDebug: print("[" + inChar + "] pSHF["+str(preShift).rjust(2, ' ')+"] ROT["+str(inRotate[lpRotate]).rjust(2, ' ')+"] " + 
+                 ShiftLst + " SFT["+ str(inShift).rjust(2, ' ') + "] POS["+ str(PosChar).rjust(2, ' ') + "] = [" + EncodedChar + "]")
              # Checks to see that we have not used all the Rotate Values, if so it starts over.
              if lpRotate == len(inRotate) - 1:
                  lpRotate = 0
@@ -247,7 +255,8 @@ def Decrypt(inShift, inJustify, inRotate, inWordList, inText, inConvert, inLeap,
              # Grabs character from new list using found position.
              if PosChar != -1: DecodedChar = inWordList[PosChar]
              else: DecodedChar = inChar
-             if inDebug: print("[" + inChar + "] pSHF["+str(preShift).rjust(2, ' ')+"] ROT["+str(inRotate[lpRotate]).rjust(2, ' ')+"] " + ShiftLst + " SFT["+ str(inShift).rjust(2, ' ') + "] POS["+ str(PosChar).rjust(2, ' ') + "] = [" + DecodedChar + "]")
+             if inDebug: print("[" + inChar + "] pSHF["+str(preShift).rjust(2, ' ')+"] ROT["+str(inRotate[lpRotate]).rjust(2, ' ')+"] " + 
+                 ShiftLst + " SFT["+ str(inShift).rjust(2, ' ') + "] POS["+ str(PosChar).rjust(2, ' ') + "] = [" + DecodedChar + "]")
 
              # Checks to see that we have not used all the Rotate Values, if so it starts over.
              if lpRotate == len(inRotate) - 1:
@@ -282,4 +291,5 @@ Rotate = CreateRotators(Cipher, Password, Convert, Debug)
 if DeCipher: outText = Decrypt(Shift, Justify, Rotate, WordList, CmdText, Convert, Leap, Debug)
 else: outText = Encrypt(Shift, Justify, Rotate, WordList, CmdText, Convert, Leap, Debug)
 
-print(outText, "\n")
+sys.stdout.write(outText)
+print("")
