@@ -110,6 +110,14 @@ Please Enter a Password:PASSWORD
 Please Enter a Password:PASSWORD
 
 THIS IS A TEST 
+
+
+> cat file.txt 
+THIS IS A TEST
+> cat file.txt | ./MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
+> cat encode.txt 
+BYW2 L8 M 6F66
+
 ```
 
 
