@@ -10,7 +10,7 @@ Shifted:    5678901234
 
 So where the Plane number ‘1234’ would become ‘6789’ from the shifted table. Then to decode the message you just use the Shifted position to get the Plane number. 
 
-# Here are the rules to Msencode:
+# Here are the rules to MScipher:
     • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789”.
     • Have a established first right shift value. An example is ‘5’.
     • Have a established Rotation key or Password. One rule is that the key must be made up from the established alphabet key. An example is ‘PASSWORD’.
