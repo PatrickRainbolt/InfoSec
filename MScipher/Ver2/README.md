@@ -1,4 +1,4 @@
-# MSencode: 
+# MScipher: 
 MScipher is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
 
 # So what is a shift cipher? 
@@ -30,33 +30,34 @@ If you are using the above examples with plane text of ‘This is a test’, it 
 ```
 SYNTAX: MScipher <args> <passcode> <text>
 
+         {-s} or {--shift}     Sets MScipher shift value.
 	 {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
-     {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
-                              Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
-                              explainitary. Mid looks at the Rotate bit and shift Left
-                              if less than or equal to the mid point of the Key List size.
-     {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation 
-                              value on a valid charater in the List.
-     {-p} or {--password}  Ask for the Rotate Key or Password after running.
-     {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
+         {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
+                                  Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
+                                  explainitary. Mid looks at the Rotate bit and shift Left
+                                  if less than or equal to the mid point of the Key List size.
+         {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation 
+                                  value on a valid charater in the List.
+         {-p} or {--password}  Ask for the Rotate Key or Password after running.
+         {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
 
-     {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
-     {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
-     {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
-     {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
+         {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
+         {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
+         {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
+         {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
 
-     {--debug}      Turns on verbose mode.
+         {--debug}      Turns on verbose mode.
 ```
 
 # Here is a example of the encryption process
 ```
-> MScipher-V2.py -s 5 -j "Mid" "PASSWORD" "THIS IS A TEST" --debug
+> MScipher-V2.py --shift 5 -justify "Mid" "PASSWORD" "THIS IS A TEST" --debug
 
 MScipher Debug-Mode Active:
-# ARGS[ 8]  ARG['-s', '5', '-j', 'Mid', 'PASSWORD', 'THIS IS A TEST', '--debug']
+# ARGS[ 8]  ARG['--shift', '5', '--justify', 'Mid', 'PASSWORD', 'THIS IS A TEST', '--debug']
 
-- ARGS[ 8]  ARG[-s] + [5]
-- ARGS[ 6]  ARG[-j] + [Mid]
+- ARGS[ 8]  ARG[--shift] + [5]
+- ARGS[ 6]  ARG[--justify] + [Mid]
 - ARGS[ 4]  ARG[PASSWORD]
 - ARGS[ 3]  ARG[THIS IS A TEST]
 - ARGS[ 2]  ARG[--debug]
@@ -93,6 +94,9 @@ MScipher Debug-Mode Active:
 - PlainText: THIS IS A TEST
 - Encrypted: BYW2 L8 M 6F66
 
+
+> MScipher-V2.py --shift 5 --justify "Mid" "PASSWORD" "BYW2 L8 M 6F66" --decipher 
+THIS IS A TEST 
 ```
 
 
