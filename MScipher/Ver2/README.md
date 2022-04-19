@@ -50,7 +50,8 @@ SYNTAX: MScipher <args> <passcode> <text>
 ```
 
 # Other implimentations:
-MScipher also reads STDIN if there is no Text Data on the command line and STDOUT. These allow you to pipe in and out data. Here is an Example:
+MScipher reads STDIN, if there is no input text on the command line and pipes out to STDOUT. These allow you to 
+pipe in and out data. Here is an Example:
 ```
 > cat file.txt | MScipher-V2.py --shift 5 --justify "Mid" > encode.txt
 ```
