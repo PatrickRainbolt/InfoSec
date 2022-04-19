@@ -66,6 +66,7 @@ def CmdLineParser():
      if len(sys.argv) < 2:
          print("""SYNTAX: MScipher <args> <passcode> <text>
 
+         {-s} or {--shift}     Sets MScipher shift value.
 	 {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
          {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
                                   Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
@@ -121,8 +122,8 @@ def CmdLineParser():
              WordList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
          elif ARG[1] == "--expanded":                                      # Sets Expanded Key List
              WordList = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789"
-         elif  ARG[1] == "-s" or ARG[1].lower() == "--shift":                                 # Set Shift Value
-             if len(ARG) > 1:                                               # Confirming Next Value is Int and storing.
+         elif  ARG[1] == "-s" or ARG[1].lower() == "--shift":              # Set Shift Value
+             if len(ARG) > 1:                                              # Confirming Next Value is Int and storing.
                  tmpShift = re.compile(r'[^\d.]+')
                  if tmpShift.sub('',ARG[2]) != '':
                      Shift = int(tmpShift.sub('',ARG[2]))
