@@ -142,7 +142,7 @@ def CmdLineParser():
          # No Text was found in the Arguments, checking STDIN for Text,
          if not sys.stdin.isatty():
              inData = sys.stdin.read()[:-1]
-             DebugOut += "-  STD[" + str(len(inData)).rjust(2, ' ') + "]   IN["+str(inData)+"]\n"
+             DebugOut += "-  STD[--]   IN["+str(inData)+"]\n"
          if inData == "": 
              SyntaxInformation()
 
