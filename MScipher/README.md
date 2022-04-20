@@ -14,8 +14,10 @@ You should have received a copy of the GNU General Public License along with thi
 # List of things to address:
 ```
 
-+ File ARgument 
++ File Arguments 
 ----+ Add in File
 ----+ Add out File
++ New Key List
++ New Rotate direction pattern
 
 ```
