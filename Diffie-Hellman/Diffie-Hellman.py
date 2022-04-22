@@ -7,13 +7,8 @@
 import random
 global prime, root
 
-
 def BitRandom(num):
     return(random.randrange(2**(num-1)+1, 2**num-1))
-
-def secretnumber (min, max):
-    secret = int(random.randint(min,max))
-    return secret
 
 def getPrime(num): 
     while True:
@@ -22,16 +17,18 @@ def getPrime(num):
             break    
     return tempPrime
 
-
 prime = getPrime(256)
 print("The Program Prime:---[",prime, "]")
 
+# root = secretnumber(5, 10)
 root = getPrime(10)
 print("The Primitive Root:--[",root, "]\n")
 
+#alicesecret = secretnumber(100, 1000)
 AlicePrivateKey = getPrime(10)
 print("Alice Private Key:---[",AlicePrivateKey, "]")
 
+#bobsecret = secretnumber(000, 1000)
 BobPrivateKey = getPrime(10)
 print("Bob Private Key:-----[", BobPrivateKey, "]\n")
 
@@ -52,4 +49,3 @@ print("-[", AliceKey, "]\n")
 BobKey = (AlicePublicKey ** BobPrivateKey) % prime
 print("Bob calculates the shared key as Key = ALicePublicKey ^ BobPrivateKey mod prime :")
 print("-[", BobKey, "]\n\n")
-
