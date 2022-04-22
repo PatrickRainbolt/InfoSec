@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+#--------------------------------------------------------------------------------------------------
+# Diffie-Hellman is to demostrate how share key cipher works.
+#
+#                                                                      Writen by: Patrick Rainbolt
+#--------------------------------------------------------------------------------------------------
 import random
 global prime, root
 
