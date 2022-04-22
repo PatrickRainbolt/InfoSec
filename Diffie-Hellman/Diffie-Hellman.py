@@ -20,15 +20,12 @@ def getPrime(num):
 prime = getPrime(256)
 print("The Program Prime:---[",prime, "]")
 
-# root = secretnumber(5, 10)
 root = getPrime(10)
 print("The Primitive Root:--[",root, "]\n")
 
-#alicesecret = secretnumber(100, 1000)
 AlicePrivateKey = getPrime(10)
 print("Alice Private Key:---[",AlicePrivateKey, "]")
 
-#bobsecret = secretnumber(000, 1000)
 BobPrivateKey = getPrime(10)
 print("Bob Private Key:-----[", BobPrivateKey, "]\n")
 
