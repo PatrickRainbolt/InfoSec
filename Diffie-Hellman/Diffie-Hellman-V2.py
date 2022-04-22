@@ -25,7 +25,7 @@ def getLowLevelPrime(n):
         pc = nBitRandom(n)
         for divisor in first_primes_list:
             if pc % divisor == 0 and divisor**2 <= pc: break
-        else: return pc
+            else: return pc
  
 def isMillerRabinPassed(mrc):
     maxDivisionsByTwo = 0
@@ -84,4 +84,3 @@ print("--[", AliceKey, "]\n")
 BobKey = (AlicePublicKey ** BobPrivateKey) % prime
 print("Bob calculates the shared key as Key = ALicePublicKey ^ BobPrivateKey mod prime :")
 print("--[", BobKey, "]\n\n")
-
