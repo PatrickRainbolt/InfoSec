@@ -8,7 +8,7 @@ import random
 global prime, root
 
 
-def nBitRandom(num):
+def BitRandom(num):
     return(random.randrange(2**(num-1)+1, 2**num-1))
 
 def secretnumber (min, max):
@@ -17,7 +17,7 @@ def secretnumber (min, max):
 
 def getPrime(num): 
     while True:
-        tempPrime = nBitRandom(num)
+        tempPrime = BitRandom(num)
         if tempPrime % 2 != 0:
             break    
     return tempPrime
