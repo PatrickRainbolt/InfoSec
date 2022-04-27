@@ -20,7 +20,7 @@ NOTE: Copy and Paste these values into the default variables. Warning changing t
 ```
 
 # What is a public and Private key pair? 
-Instead of trading a private <b>Password</b> you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
+Instead of trading a <i>private password</i> you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
 
 First, you are asked for a new Key Ring Password. That password is encoded with MScipher to get Rotator Position, then the Values are joined together
 giving a <b>Password Value</b>. 
