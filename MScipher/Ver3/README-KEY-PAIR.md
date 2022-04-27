@@ -1,8 +1,8 @@
 # MScipher Key Pair: 
-A function that was missing in this Cipher was the ability to have a Public and Private key. So by exchanging public keys, the information can be Ciphered by only using your Private key and their Public key.
+A function that was missing in this Cipher was the ability to have a <b>Public</b> and <b>Private</b> key. So by exchanging public keys, the information can be Ciphered by only using your Private key and their Public key.
 
 # So what is the cipher? 
-I went with a Diffie-Hellman approach to generating key pairs. This is done by create a Program Prime and a Primitive Root for the MScipher. These values can be regenerate and edited into the code, but anyone that trades Public Keys with you has to have the same values in there code. Unless you have a specific reason to create a new cipher set, I woulld leave these as the defaults.
+I went with a Diffie-Hellman approach to generating key pairs. This is done by create a <b>Program Prime</b> and a <b>Primitive Root</b> for the MScipher. These values can be regenerate and edited into the code, but anyone that trades Public Keys with you has to have the same values in there code. Unless you have a specific reason to create a new cipher set, I woulld leave these as the defaults.
 ```
 The Program Prime---[98348149859422759653449222024902527358447401882717513832658752589732178323087]
 The Primitive Root--[112610998970462321170418252784376929165518212068608580368800985994928452406337]
@@ -20,14 +20,14 @@ NOTE: Copy and Paste these values into the default variables. Warning changing t
 ```
 
 # What is a public and Private key pair? 
-Instead of trading a Private Password you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
+Instead of trading a private <b>Password</b> you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
 
 First, you are asked for a new Key Ring Password. That password is encoded with MScipher to get Rotator Position, then the Values are joined together
-giving a Password Value. 
+giving a <b>Password Value</b>. 
 
-Second, a random Private Key is generated. This value is added to the Password Value and stored in a file called "MSc.prv". The Password is added before storing the key to make brute force attacks much more difficult. 
+Second, a random <b>Private Key</b> is generated. This value is added to the <b>Password Value</b> and stored in a file called "MSc.prv". The Password is added before storing the key to make brute force attacks much more difficult. 
 
-Third, a Public key is created by taking the <b>Primitive Root</b> Raised to the power of your Private Key and modular by Program Prime. This will generate a value that anyone can use to cipher messages with you.
+Third, a <b>Public key</b> is created by taking the <b>Primitive Root</b> Raised to the power of your <b>Private Key</b> and modular by <b>Program Prime</b>. This will generate a value that anyone can use to cipher messages with you.
 ```
 [/home/ceasar]: MScipher-V3.py --keygen
 Are you sure you want to generate Rotator Key Pairs, This will overwrite any other Keys (Yes or No): Yes
