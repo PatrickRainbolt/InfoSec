@@ -1,7 +1,7 @@
 # MScipher Key Pair: 
 A function that was missing in this Cipher was the ability to have a <b>Public</b> and <b>Private</b> key. So by exchanging public keys, the information can be Ciphered by only using your Private key and their Public key.
 
-# What cipher method are we using for a Public and Private Key? 
+# What cipher method are we using? 
 I went with a Diffie-Hellman approach to generating key pairs. This is done by create a <b>Program Prime</b> and a <b>Primitive Root</b> for the MScipher. These values can be regenerate and edited into the code, but anyone that trades Public Keys with you has to have the same values in there code. Unless you have a specific reason to create a new cipher set, I woulld leave these as the defaults.
 ```
 The Program Prime---[98348149859422759653449222024902527358447401882717513832658752589732178323087]
