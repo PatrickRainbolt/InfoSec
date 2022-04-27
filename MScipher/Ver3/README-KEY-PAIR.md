@@ -20,14 +20,14 @@ NOTE: Copy and Paste these values into the default variables. Warning changing t
 ```
 
 # What is a public and Private key pair? 
-Instead of trading a Private Password, you can exchange a Public key instead, which anyone can view, but only your private key will decipher the information. 
+Instead of trading a Private Password you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
 
-First, you are asked for a Key Ring Password. That password is encoded with MScipher to get Rotator Position, then the Values are joined together
+First, you are asked for a new Key Ring Password. That password is encoded with MScipher to get Rotator Position, then the Values are joined together
 giving a Password Value. 
 
-Second, a random Private Key is generated. This value is added to the Password Value and stored in a file called "MSc.prv". The Password is added before storing to make brute force attacks much more difficult. 
+Second, a random Private Key is generated. This value is added to the Password Value and stored in a file called "MSc.prv". The Password is added before storing the key to make brute force attacks much more difficult. 
 
-Third, a Public key is created by taking the Primitive Root Raised to the power of your Private Key and modular by Program Prime. This will generate a value that anyone can use to cipher messages with you.
+Third, a Public key is created by taking the <b>Primitive Root</b> Raised to the power of your Private Key and modular by Program Prime. This will generate a value that anyone can use to cipher messages with you.
 ```
 [/home/ceasar]: MScipher-V3.py --keygen
 Are you sure you want to generate Rotator Key Pairs, This will overwrite any other Keys (Yes or No): Yes
