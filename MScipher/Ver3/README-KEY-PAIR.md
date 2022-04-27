@@ -1,58 +1,22 @@
-# MSencode: 
-MSencode is a Shift Cipher but every character has a unique shift table. This is accomplished by adding in a Rotation key or Password to the Cipher.
+# MScipher Key Pair: 
+A function that was missing in this Cipher was the ability to have a Public and Private key. So by exchanging public keys, the information can be Ciphered by only using your Private key and their Public key.
 
-# So what is a shift cipher? 
-It is a simple substitution cipher where the clear-text is shifted a number of times up or down a known alphabet. Here is an example where we have shifted to the right ‘5’ positions:
+# So what is the cipher? 
+I went with a Diffie-Hellman approach to generating key pairs. This is done by create a Program Prime and a Primitive Root for the MScipher. These values can be regenerate and edited into the code, but anyone that trades Public Keys with you has to have the same values in there code.  
 ```
-Plane:	    0123456789
-Shifted:    5678901234
-```
-
-So where the Plane number ‘1234’ would become ‘6789’ from the shifted table. Then to decode the message you just use the Shifted position to get the Plane number. 
-
-# Here are the rules to Msencode:
-    • Have a established alphabet key. Both the encode and decode process rely on a set key. An example is, “ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789”.
-    • Have a established first right shift value. An example is ‘5’.
-    • Have a established Rotation key or Password. One rule is that the key must be made up from the established alphabet key. An example is ‘PASSWORD’.
-
-# How does it work:
-    1. First we create the original right shifted alphabet key from the shift value you included. Using the example above we end up with this right shifted alphabet key, “FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE”.
-    2. Creates an array of positions, each character of the given Rotation key or Password, using the right shifted alphabet key. An example of this array would be, ‘10, 31, 13, 13, 17, 9, 12, 34’. So the ‘P’ from the example ‘PASSWORD’ is now in position ‘10’. I decided to create these using the right shifted alphabet key to make brute-forcing much harder. 
-    3. Time to encode the message:
-        ◦ Take the current shift value and add the first Rotation key together. If that value is larger the the length of the established alphabet key then subtract the length of the established alphabet key. Here is a example: Shift is at ‘5’, the first Rotation key is ‘10’, therefor ‘5 + 10’ equals ‘15’. ‘15’ is not larger than the length of the established alphabet key, which is ‘36’. Note: once you get to the last Rotation key just reset to position ‘1’ and keep rotating. 
-        ◦ Take this new shift value and create a new right shifted alphabet key from the established alphabet key. Using the new shift value of ‘15’ we end up with a new key, ‘PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO’.
-        ◦ Look up the position of first character of the text to encode in the established alphabet key. An example would be, ‘T’ is position ‘19’. Position ‘19’ is the new key is ‘8’.
-        ◦ Continue this process through all of the characters in the text to encode.
-
-If you are using the above examples with plane text of ‘This is a test’, it will encrypted to ‘8R5SQ8U9KEB94E’.
-
-
-# Here is a example of the encryption process
-```
-]-[ ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789  --LEN[36]
-]-[ FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE  --SHIFT[5]
- 
-]-[ Rotators[10, 31, 13, 13, 17, 9, 12, 34]
- 
-[T] PQRSTUVWXYZ0123456789ABCDEFGHIJKLMNO SFT[15] POS[19] = [8]
-[h] KLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJ SFT[10] POS[ 7] = [R]
-[i] XYZ0123456789ABCDEFGHIJKLMNOPQRSTUVW SFT[23] POS[ 8] = [5]
-[s] ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 SFT[36] POS[18] = [S]
-[ ] RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQ SFT[17] POS[-1] = [Q]
-[i] 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ SFT[26] POS[ 8] = [8]
-[s] CDEFGHIJKLMNOPQRSTUVWXYZ0123456789AB SFT[ 2] POS[18] = [U]
-[ ] ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 SFT[36] POS[-1] = [9]
-[a] KLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJ SFT[10] POS[ 0] = [K]
-[ ] FGHIJKLMNOPQRSTUVWXYZ0123456789ABCDE SFT[ 5] POS[-1] = [E]
-[t] STUVWXYZ0123456789ABCDEFGHIJKLMNOPQR SFT[18] POS[19] = [B]
-[e] 56789ABCDEFGHIJKLMNOPQRSTUVWXYZ01234 SFT[31] POS[ 4] = [9]
-[s] MNOPQRSTUVWXYZ0123456789ABCDEFGHIJKL SFT[12] POS[18] = [4]
-[t] VWXYZ0123456789ABCDEFGHIJKLMNOPQRSTU SFT[21] POS[19] = [E]
- 
-Decrypt: This is a test
-Encrypt: 8R5SQ8U9KEB94E
-
-
+The Program Prime---[98348149859422759653449222024902527358447401882717513832658752589732178323087]
+The Primitive Root--[112610998970462321170418252784376929165518212068608580368800985994928452406337]
 ```
 
+# How do I regenerate a new set of values? 
+```
+[/home/ceasar]: MScipher-V3.py --keyroot
+ The Program Prime: 101306026189110404562794223543610887302783980074780257137217063750443517305487
+The Primitive Root: 105212168530198836448204951699665177964500386522309245063885784986679433581131 
 
+NOTE: Copy and Paste these values into the default variables. Warning changing these variable
+  will require new public keys and will not decode privious messages that used the old Key pairs.
+  Anyone you are communicating with will also have to change their values to match these new Key pairs.
+```
+
+# So what is the cipher? 
