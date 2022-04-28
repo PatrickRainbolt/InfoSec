@@ -45,4 +45,68 @@ MSpub:27795932278286082649526146816580757607424177962524698122986674033881123651
 ```
 The "27795932278286082649526146816580757607424177962524698122986674033881123651396" value after "MSpub:" is the Public key.
 
+# How to add or delete someone to the Key Ring?
+MScipher has two commands "--keyadd" and "--keydel" that accomplishes this task.  
+
+```
+[/home/ceasar]: MScipher-V3.py --keyadd "bob"
+Enter Public Key for bob: 38942130306459146109341625640864409318756929387036866278864827954285392085988
+
+MScipher: bob was added to the Rotator Key Ring.
+```
+
+# How to view your Key Ring?
+MScipher command to view your public Key Ring is "--keylist".
+```
+[/home/ceasar]: MScipher-V3.py --keylist
+MScipher Public Key Ring Storage File.
+----------------------------------------------------------------------------------------------
+bob:38942130306459146109341625640864409318756929387036866278864827954285392085988
+
+```
+
+
+# How to encrypt a message
+When using Key Pairs the Password it request is your Key Ring Password.
+
+```
+[/home/ceasar]: MScipher-V3.py -s 5 -k "bob" "THIS IS A TEST" --debug
+
+MScipher Debug-Mode Active:
+# ARGS[ 7]  ARG['-s', '5', '-k', 'bob', 'THIS IS A TEST', '--debug']
+
+- ARGS[ 7]  ARG[-s] + [5]
+- ARGS[ 5]  ARG[-k] + [bob]
+- ARGS[ 3]  ARG[THIS IS A TEST]
+- ARGS[ 2]  ARG[--debug]
+
+- LEN[36] LST[ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]
+- LEN[..] SHF[5]
+
+- Loading Public Key for bob [38942130306459146109341625640864409318756929387036866278864827954285392085988]
+- Loading Your Private Key.
+Please Enter your Key Ring Password: password
+
+- Deciphering Private Key.
+- LEN[39] ROT[12, 8, 9, 14, 14, 11, 36, 22, 13, 13, 14, 33, 14, 12, 34, 30, 16, 9, 35, 1, 5, 12, 11, 6, 9, 5, 1, 21, 9, 0, 6, 18, 11, 14, 6, 21, 20, 10, 9]
+
+- L[T] pSHF[ 5] ROT[12] RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQ SFT[17] POS[19] = [A]
+- L[H] pSHF[17] ROT[ 8] Z0123456789ABCDEFGHIJKLMNOPQRSTUVWXY SFT[25] POS[ 7] = [6]
+- L[I] pSHF[25] ROT[ 9] 89ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567 SFT[34] POS[ 8] = [G]
+- L[S] pSHF[34] ROT[14] MNOPQRSTUVWXYZ0123456789ABCDEFGHIJKL SFT[12] POS[18] = [4]
+- L[ ] pSHF[12] ROT[14] 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ SFT[26] POS[-1] = [ ]
+- L[I] pSHF[26] ROT[11] BCDEFGHIJKLMNOPQRSTUVWXYZ0123456789A SFT[ 1] POS[ 8] = [J]
+- L[S] pSHF[ 1] ROT[36] BCDEFGHIJKLMNOPQRSTUVWXYZ0123456789A SFT[ 1] POS[18] = [T]
+- L[ ] pSHF[ 1] ROT[22] XYZ0123456789ABCDEFGHIJKLMNOPQRSTUVW SFT[23] POS[-1] = [ ]
+- L[A] pSHF[23] ROT[13] ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 SFT[36] POS[ 0] = [A]
+- L[ ] pSHF[36] ROT[13] NOPQRSTUVWXYZ0123456789ABCDEFGHIJKLM SFT[13] POS[-1] = [ ]
+- L[T] pSHF[13] ROT[14] 123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0 SFT[27] POS[19] = [K]
+- L[E] pSHF[27] ROT[33] YZ0123456789ABCDEFGHIJKLMNOPQRSTUVWX SFT[24] POS[ 4] = [2]
+- L[S] pSHF[24] ROT[14] CDEFGHIJKLMNOPQRSTUVWXYZ0123456789AB SFT[ 2] POS[18] = [U]
+- L[T] pSHF[ 2] ROT[12] OPQRSTUVWXYZ0123456789ABCDEFGHIJKLMN SFT[14] POS[19] = [7]
+ 
+- PlainText: THIS IS A TEST
+- Encrypted: A6G4 JT A K2U7
+```
+
 
