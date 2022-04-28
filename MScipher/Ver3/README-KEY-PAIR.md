@@ -119,7 +119,8 @@ MScipher Debug-Mode Active:
 Please Enter your Key Ring Password: password
 
 - Deciphering Private Key.
-- LEN[39] ROT[12, 8, 9, 14, 14, 11, 36, 22, 13, 13, 14, 33, 14, 12, 34, 30, 16, 9, 35, 1, 5, 12, 11, 6, 9, 5, 1, 21, 9, 0, 6, 18, 11, 14, 6, 21, 20, 10, 9]
+- LEN[39] ROT[12, 8, 9, 14, 14, 11, 36, 22, 13, 13, 14, 33, 14, 12, 34, 30, 16, 9, 35, 1, 5, 12, 11, 6, 9, 5, 
+              1, 21, 9, 0, 6, 18, 11, 14, 6, 21, 20, 10, 9]
 
 - L[T] pSHF[ 5] ROT[12] RSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQ SFT[17] POS[19] = [A]
 - L[H] pSHF[17] ROT[ 8] Z0123456789ABCDEFGHIJKLMNOPQRSTUVWXY SFT[25] POS[ 7] = [6]
