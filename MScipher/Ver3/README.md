@@ -125,5 +125,3 @@ THIS IS A TEST
 BYW2 L8 M 6F66
 
 ```
-
-<b>Quick Note: I am aways that there is a issue with having a small Prive Key, I am working to improve the Key issues in the next revision.</b>
