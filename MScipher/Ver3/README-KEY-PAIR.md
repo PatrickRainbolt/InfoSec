@@ -141,4 +141,6 @@ Please Enter your Key Ring Password: password
 - Encrypted: A6G4 JT A K2U7
 ```
 
+# Quick Note:
+<b>I am aways that there is a issue with having a small Prive Key, I am working to improve the Key issues in the next revision.</b>
 
