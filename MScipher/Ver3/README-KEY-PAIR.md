@@ -75,6 +75,8 @@ MSpub:27795932278286082649526146816580757607424177962524698122986674033881123651
 ```
 The "27795932278286082649526146816580757607424177962524698122986674033881123651396" value after "MSpub:" is the Public key.
 
+
+
 # How to add or delete someone to the Key Ring?
 MScipher has two commands "--keyadd" and "--keydel" that accomplishes this task.  
 
@@ -94,7 +96,6 @@ MScipher Public Key Ring Storage File.
 bob:38942130306459146109341625640864409318756929387036866278864827954285392085988
 
 ```
-
 
 # How to encrypt a message
 When using Key Pairs the Password it request is your Key Ring Password.
