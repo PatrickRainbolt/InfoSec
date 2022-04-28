@@ -19,6 +19,36 @@ NOTE: Copy and Paste these values into the default variables. Warning changing t
   Anyone you are communicating with will also have to change their values to match these new Key pairs.
 ```
 
+# Program Syntax:
+```
+SYNTAX: MScipher <args> <passcode> <text>
+
+     {-s} or {--shift}     Sets MScipher shift value.
+     {-d} or {--decipher}  Puts MScipher into a Decipher Mode.
+     {-j} or {--justify}   Sets MScipher into what Method to Shift Key List,
+                              Followed by {"Left"/"Mid"/"Right"} Left and Right ar both 
+                              explainitary. Mid looks at the Rotate bit and shift Left
+                              if less than or equal to the mid point of the Key List size.
+     {-l} or {--leap}      Sets MScipher to Only Increment the next Rotation
+     {-k} of {--keypair}   This will cause the program to use Rotator Key Pairs for the cipher. 
+     {-p} or {--password}  Ask for the Rotate Key or Password after running.
+     {-u} or {--upper}     Sets MScipher to Uppercase all Alphabetic Characters.
+
+     {--minimal}    Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789} This is the Default.
+     {--standard}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789}
+     {--enlarged}   Sets Key to {ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz}
+     {--expanded}   Sets Key to {AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789}
+
+     {--keyroot}    Generates a new set of Rotator Keys Prime Value and Keys Primitive Root.
+     {--keygen}     This will cause the program to generate Rotator Key Pairs. 
+                              value on a valid charater in the List.
+     {--keypub}     Outputs the current Public Rotator Key to Share with others.
+     {--keylist}    List the contents of your Public Key Ring.
+     {--keyadd}     Adds an entry from your Public Key Ring.
+     {--keydel}     Deletes an entry from your Public Key Ring.
+     {--debug}      Turns on verbose mode.
+```
+
 # What is a public and Private key pair? 
 Instead of trading a <i>private password</i> you can exchange Public keys instead, which anyone can view, but only your private key will decipher the information. 
 
