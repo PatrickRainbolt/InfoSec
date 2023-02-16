@@ -23,7 +23,9 @@ def fixedOutput(fpre , fvalue):
 
 termColorYellow = '\033[93m'
 termColorEnd = '\033[0m'
-numDigits = 768
+
+# Number of fix digit positions to in your primes.
+numDigits = 768			
 
 print("-----------------------------------------------------------")
 print("- Setting up the primary Program Prime and Primitive Root -")
