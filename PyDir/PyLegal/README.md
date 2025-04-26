@@ -124,7 +124,7 @@ No external packages required.
 
 ---
 
-## License
+### License
+This project is licensed under the [MIT License](LICENSE.md).
 
-This project is licensed under the MIT License.
-
+Thank you for your interest in this project, and we appreciate any support you can provide during its development!
