@@ -139,6 +139,7 @@ The Markdown output of the directory listing could look like this:
 
 The script has built-in logging that provides feedback and troubleshooting information. You can adjust the log level with the `--debug` or `--mute` options. If you wish to store logs in a file, you can specify the log file using the `--log-file` argument.
 
-## License
+### License
+This project is licensed under the [MIT License](LICENSE).
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Thank you for your interest in this project, and we appreciate any support you can provide during its development!
