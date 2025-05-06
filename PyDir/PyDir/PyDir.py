@@ -11,6 +11,7 @@ import fnmatch                      # Provides functions for matching filenames 
 import hashlib                      # Provides algorithms for hashing data (e.g., MD5, SHA-256) commonly used for integrity checks or securely storing passwords.
 import base64                       # Provides functions for encoding and decoding binary data into base64, often used for text-based representation of binary data.
 import logging                      # Provides a flexible framework for logging messages, useful for debugging and monitoring application behavior.
+import argparse
 from copy import deepcopy           # Allows you to create a deep copy of objects, ensuring that nested objects are also copied rather than referenced.
 from datetime import datetime       # Provides classes and functions for working with dates and times, including formatting and parsing datetime objects.
 
