@@ -1,6 +1,6 @@
 import json             # Provides functionality for reading and writing JSON files
 import sys              # Provides access to system-specific parameters and functions
-import re               #  loads Python's regular expression module for pattern matching and text searching.
+import re               # loads Python's regular expression module for pattern matching and text searching.
 import argparse         # Enables parsing command-line arguments
 
 # DEBUG Mode Global
