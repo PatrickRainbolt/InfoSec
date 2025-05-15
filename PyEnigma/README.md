@@ -283,6 +283,3 @@ python3 PyEnigma.py --text "Test" --positions AAA --debug
 ## Licensing
 
 This suite is released under the [MIT License](LICENSE.md).
-
-Let me know if you'd like this turned into a downloadable file or embedded into your project directory structure.
-```
