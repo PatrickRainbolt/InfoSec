@@ -1,0 +1,30 @@
+{
+    "reflectors": [
+        {"name": "A", "wiring": "YRUHQSLDPXNGOKMIEBFZCWVJAT"},
+        {"name": "B", "wiring": "FVPJIAOYEDRZXWGCTKUQSBNMHL"},
+        {"name": "C", "wiring": "ENKQAUYWJICOPBLMDXZVFTHRGS"},
+        {"name": "D", "wiring": "RDOBJNTKVEHMLFCWZAXGYIPSUQ"},
+        {"name": "E", "wiring": "MFLNTHBQKCROGSZWIDVAXYUPJE"},
+        {"name": "F", "wiring": "TWVZKRQUGOMLHABNYSCDFPIXEJ"},
+        {"name": "G", "wiring": "QYHOGNECVPUZTFDJAXWMKISRBL"},
+        {"name": "H", "wiring": "QWERTZUIOASDFGHJKPYXCVBNML"},
+        {"name": "I", "wiring": "MLPKNJIBHUVGYCFTXDRZESWQAO"},
+        {"name": "J", "wiring": "CKTREBLAPNQWOVZYJGXMFHDSIU"},
+        {"name": "K", "wiring": "RNJZMTDHQGKPBAWCYFVLEIXUOS"},
+        {"name": "L", "wiring": "YXCVBNMLPKJHGFDSAQWERTZUIO"},
+        {"name": "M", "wiring": "PQOWIERUTYALSKDJFHGZMXNCBV"},
+        {"name": "N", "wiring": "ADGJMPTCKHQSXKNWBELFRYUIOZ"},
+        {"name": "O", "wiring": "ZYXWVUTSRQPONMLKJIHGFEDCBA"},
+        {"name": "P", "wiring": "BZAQWSXCDERFVTGYHNUJMIKOLP"},
+        {"name": "Q", "wiring": "MIKUNJHBVGYCFTXDRZESWQAPLO"},
+        {"name": "R", "wiring": "XSWQAZTGBHNYJUMKILOPVFRCDE"},
+        {"name": "S", "wiring": "GBHINJKMLOPQRSTUVWXYZACDEF"},
+        {"name": "T", "wiring": "NMKLPOIUYHGTRFEDWSQAZXCVBJ"},
+        {"name": "U", "wiring": "QAZWSXEDCRFVTGBYHNUJMIKOLP"},
+        {"name": "V", "wiring": "TGBYHNUJMIKOLPQAZWSXEDCRFV"},
+        {"name": "W", "wiring": "DCFVRGBYHNUTJMIKOLPQAZWSXE"},
+        {"name": "X", "wiring": "WSXEDCRFVTGBYHNUJMIKOLPQAZ"},
+        {"name": "Y", "wiring": "LPKOJIUHBVGYCFTXDZRESAWQNM"},
+        {"name": "Z", "wiring": "KJHGFDSAQWERTYUIOPZXCVBNML"}
+    ]
+}

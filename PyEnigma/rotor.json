@@ -1,0 +1,24 @@
+{
+    "rotors": [
+      {"name": "1",  "wiring": "EKMFLGDQVZNTOWYHXUSPAIBRCJ", "notch": "Q"},
+      {"name": "2",  "wiring": "AJDKSIRUXBLHWTMCQGZNPYFVOE", "notch": "E"},
+      {"name": "3",  "wiring": "BDFHJLCPRTXVZNYEIWGAKMUSQO", "notch": "V"},
+      {"name": "4",  "wiring": "ESOVPZJAYQUIRHXLNFTGKDCMWB", "notch": "J"},
+      {"name": "5",  "wiring": "VZBRGITYUPSDNHLXAWMJQOFECK", "notch": "Z"},
+      {"name": "6",  "wiring": "JPGVOUMFYQBENHZRDKASXLICTW", "notch": "M"},
+      {"name": "7",  "wiring": "NZJHGRCXMYSWBOUFAIVLPEKQDT", "notch": "R"},
+      {"name": "8",  "wiring": "FKQHTLXOCBJSPDZRAMEWNIUYGV", "notch": "F"},
+      {"name": "9",  "wiring": "LEYJVCNIXWPBQMDRTAKZGFUHOS", "notch": "Y"},
+      {"name": "10", "wiring": "FSOKANUERHMBTIYCWLQPZXVGJD", "notch": "S"},
+      {"name": "11", "wiring": "KZHESGCVQJXRDYTNWBPFMAUILO", "notch": "K"},
+      {"name": "12", "wiring": "PQOWIERUTYALSKDJFHGZMXNCBV", "notch": "P"},
+      {"name": "13", "wiring": "MLPKNJIBHUVGYCFTXDRZESWQAO", "notch": "M"},
+      {"name": "14", "wiring": "FVPJIAOYEDRZXWGCTKUQSBNMHL", "notch": "F"},
+      {"name": "15", "wiring": "ENKQAUYWJICOPBLMDXZVFTHRGS", "notch": "E"},
+      {"name": "16", "wiring": "RDOBJNTKVEHMLFCWZAXGYIPSUQ", "notch": "R"},
+      {"name": "17", "wiring": "XSWQAZTGBHNYJUMKILOPVFRCDE", "notch": "X"},
+      {"name": "18", "wiring": "GBHINJKMLOPQRSTUVWXYZACDEF", "notch": "G"},
+      {"name": "19", "wiring": "NMKLPOIUYHGTRFEDWSQAZXCVBJ", "notch": "N"},
+      {"name": "20", "wiring": "QAZWSXEDCRFVTGBYHNUJMIKOLP", "notch": "Q"}
+    ]
+}
