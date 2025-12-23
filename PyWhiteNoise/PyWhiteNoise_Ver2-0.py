@@ -273,7 +273,7 @@ def analyze_wav(wavfile: str):
         print(f"[-] Error reading WAV: {e}")
         return
 
-    print("[*] PyWhiteNoise Ultra-Stealth Analysis")
+    print("[*] PyWhiteNoise Analysis")
     print(f" Total samples : {total_samples:,}")
     print(f" Theoretical max payload bits : {total_samples:,}")
     print(f" Theoretical max payload bytes : {total_samples // 8:,}")
@@ -356,7 +356,7 @@ def main():
     parser.add_argument("-wav", help="Output/input WAV file")
     parser.add_argument("-infile", help="Input file (encode)")
     parser.add_argument("-stdin", action="store_true", help="Read from stdin (encode)")
-    parser.add_argument("-stealth", action="store_true", help="Ultra-stealth mode: scatter header & payload, encrypt header, randomize LSBs")
+    parser.add_argument("-stealth", action="store_true", help="Stealth mode: scatter header & payload, encrypt header, randomize LSBs")
     parser.add_argument("-noise-type", choices=["white", "pink"], default="white", help="Noise type for generated carrier (default: white)")
     parser.add_argument("-input-wav", help="Embed into existing WAV instead of generating noise")
     args = parser.parse_args()
