@@ -77,6 +77,14 @@ If no valid combination of flags is given, the tool prints the help message auto
 ./PyWhiteNoise.py -analyze -wav suspicious.wav
 ```
 
+---
+
+## Licensing
+
+This suite is released under the [MIT License](LICENSE.md).
+
+---
+
 ## Technical Deep Dive
 ## Data Storage in PyWhiteNoise: Normal vs Stealth Mode
 
@@ -195,12 +203,4 @@ No fixed starting point — positions depend entirely on the password.
 
 Both modes provide **confidentiality** through strong encryption.  
 **Stealth mode** adds true **steganographic security** — hiding the very existence of the data.
-
-
-
----
-
-## Licensing
-
-This suite is released under the [MIT License](LICENSE.md).
 
