@@ -30,7 +30,7 @@ It includes a built-in analyzer (`-analyze`) that attempts legacy detection and 
 | `-encode`     | Encode (hide) data into a WAV file.                                         |
 | `-decode`     | Decode (extract) hidden data from a WAV file.                               |
 | `-analyze`    | Analyze a WAV file for signs of hidden data (legacy + basic stealth checks).|
-| `-version`    | Print version (`1.4-ultra-stealth`) and exit.                               |
+| `-version`    | Print version (`1.4`) and exit.                               |
 
 ### Required Arguments
 
@@ -51,7 +51,7 @@ It includes a built-in analyzer (`-analyze`) that attempts legacy detection and 
 | Flag               | Description                                                                 |
 |--------------------|-----------------------------------------------------------------------------|
 | `-stealth`         | Enable ultra-stealth mode: scatter header & payload, encrypt header, randomize unused LSBs. |
-| `-noise-type white|pink` | Choose generated carrier noise type (default: `white`). Only used when no `-input-wav` is given. |
+| `-noise-type <white / pink>` | Choose generated carrier noise type (default: `white`). Only used when no `-input-wav` is given. |
 | `-input-wav <path>`| Instead of generating noise, embed into an existing WAV file (greatly increases plausible deniability). |
 
 ### Help
