@@ -77,3 +77,9 @@ If no valid combination of flags is given, the tool prints the help message auto
 ./PyWhiteNoise.py -analyze -wav suspicious.wav
 ```
 
+---
+
+## Licensing
+
+This suite is released under the [MIT License](LICENSE.md).
+
