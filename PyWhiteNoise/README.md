@@ -3,8 +3,8 @@
 PyWhiteNoise is a command-line steganography tool that hides arbitrary encrypted data inside WAV audio files using **least significant bit (LSB) embedding**. It generates white or pink noise as a carrier by default, or can embed into an existing real-world audio file for greater plausible deniability. Data is always encrypted with **AES-GCM** using a key derived from a user-provided password via **Scrypt**, ensuring confidentiality even if the embedding is detected.
 
 The tool offers two modes:
-- **Normal mode** — sequential embedding (faster, easier to detect).
-- **Stealth mode** (`-stealth`) — scattered embedding with password-seeded PRNGs, encrypted header, and randomization of unused LSBs (highly resistant to detection).
+- **Normal mode** - sequential embedding (faster, easier to detect).
+- **Stealth mode** (`-stealth`) - scattered embedding with password-seeded PRNGs, encrypted header, and randomization of unused LSBs (highly resistant to detection).
 
 It includes a built-in analyzer (`-analyze`) that attempts legacy detection and explains why ultra-stealth files are difficult to spot without the password.
 
