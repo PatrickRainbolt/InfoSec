@@ -278,7 +278,7 @@ def analyze_wav(wavfile: str):
     print(f" Theoretical max payload bits : {total_samples:,}")
     print(f" Theoretical max payload bytes : {total_samples // 8:,}")
     print()
-    print(" Note: In ultra-stealth mode (-stealth):")
+    print(" Note: In stealth mode (-stealth):")
     print("   • Header is encrypted and scattered (unknown positions)")
     print("   • Unused LSBs are randomized")
     print("   • Can be embedded in real audio (not just generated noise)")
@@ -339,7 +339,7 @@ def analyze_wav(wavfile: str):
         print(" → Try decoding WITHOUT -stealth flag.")
     else:
         print(" → No reliable signs of legacy embedding.")
-        print(" → If ultra-stealth was used, detection without password is extremely difficult.")
+        print(" → If stealth was used, detection without password is extremely difficult.")
 
     if len(candidates) > 1:
         print("\n Other candidates:")
@@ -348,7 +348,7 @@ def analyze_wav(wavfile: str):
 
 # ------------------ CLI ------------------
 def main():
-    parser = argparse.ArgumentParser(description="PyWhiteNoise.py hides encrypted data in audio (ultra-stealth edition).")
+    parser = argparse.ArgumentParser(description="PyWhiteNoise.py hides encrypted data in audio (stealth edition).")
     parser.add_argument("-encode", action="store_true")
     parser.add_argument("-decode", action="store_true")
     parser.add_argument("-analyze", action="store_true")
