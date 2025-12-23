@@ -81,7 +81,7 @@ If no valid combination of flags is given, the tool prints the help message auto
 
 ## Licensing
 
-This suite is released under the [MIT License](LICENSE.md).
+This suite is released under the [MIT License](LICENSE.md).<br><br><br>
 
 ---
 
