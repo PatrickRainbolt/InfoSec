@@ -77,7 +77,7 @@ If no valid combination of flags is given, the tool prints the help message auto
 ./PyWhiteNoise.py -analyze -wav suspicious.wav
 ```
 
-
+## Technical Deep Dive
 ## Data Storage in PyWhiteNoise: Normal vs Stealth Mode
 
 PyWhiteNoise hides encrypted data in WAV audio files by modifying the **least significant bit (LSB)** of 16-bit audio samples. It supports two modes: **normal mode** (default) and **stealth mode** (`-stealth` flag). Both modes use strong encryption (AES-GCM with Scrypt key derivation), but differ significantly in how bits are placed in the audio to resist detection.
