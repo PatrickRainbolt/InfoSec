@@ -1,9 +1,8 @@
 # Educational Proof-of-Concept
 
-**This project is provided strictly for educational and security research purposes.**  
-It demonstrates the combination of modern authenticated encryption with steganographic techniques by hiding arbitrary data (text or binary) inside innocuous-looking retro ASCII art. The author does not condone or encourage the use of these techniques for any illegal, unethical, or malicious activity. Hiding illicit material remains illegal regardless of the concealment method. Responsible disclosure and ethical use are strongly encouraged.
+This document describes a proof-of-concept technique for combining modern cryptography with steganography by embedding encrypted payloads within syntactically valid but innocuous-looking source code. The content is provided strictly for educational and security research purposes—to illustrate novel covert channel possibilities, encourage the development of better detection methods, and promote deeper understanding of data-hiding risks in software artifacts. The author does not condone or encourage the use of these techniques for any illegal, unethical, or malicious activity. Readers are reminded that hiding illicit material remains illegal regardless of the concealment method, and responsible disclosure practices should always be followed when exploring or publishing security-related concepts.
 
-
+---
 
 # PyCryptoArt v2.3 — Complete Overview
 
