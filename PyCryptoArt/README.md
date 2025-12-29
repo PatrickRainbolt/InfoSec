@@ -24,7 +24,7 @@ The resulting ".txt" file looks like pure vintage terminal art while securely pr
 - **Safe file handling** - refuses to overwrite existing files during encryption
 - **Debug mode** for learning and troubleshooting
 
-## Example Output (hiding a photo)
+## Example Output (hiding in the Art text)
 
 ```
 ---------------------------------------------------------------PyCryptoArt 2.3--
