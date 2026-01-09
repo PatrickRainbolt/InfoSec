@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# PyBinaryNoise v2.2
+# PyBinaryNoise
 # -------------------------------------------------------------------------------------------
 # A secure, lightweight file obfuscation tool using password-based encryption,
 # stream splitting, custom interleaving patterns, and optional noise insertion.
