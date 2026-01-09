@@ -74,4 +74,4 @@ Together, these tools provide a **low-cost, high-impact way to improve transpare
 
 ## Licensing
 
-This suite is released under the [MIT License](LICENSE.md).
+This suite is released under the [MIT License](../../LICENSE.md).
